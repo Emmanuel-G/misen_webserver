@@ -10,6 +10,7 @@ const schema = buildSchema(`
 
     type Bet {
         id: ID!
+        drawDate: String!
         betGame: Game!
         betRound: Round!
         betGroup: Group!
