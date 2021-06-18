@@ -24,7 +24,7 @@ const schema = buildSchema(`
         gamePlays: [Play]
         gameRounds: [Round]
         gameBets: [Bet]
-        gameDraw: [Draw]
+        gameDraw: Draw!
         gameComplete: Boolean!
     }
 
@@ -69,6 +69,7 @@ const schema = buildSchema(`
     input GameInput {
         gameNumber: Int!
         gameComplete: Boolean!
+        gameDraw: String
     }
 
     input RoundInput {
@@ -82,6 +83,9 @@ const schema = buildSchema(`
 
     input DrawInput {
         drawNumber: Int!
+        drawDate: String!
+        drawResults: [Int!]!
+        drawGame: String!
     }
 
     input BetInput {
@@ -96,6 +100,7 @@ const schema = buildSchema(`
     type RootQuery {
         groups: [Group!]!
         users: [User!]!
+        draws: [Draw!]!
         games: [Game!]!
         rounds: [Round!]!
         plays: [Play!]!

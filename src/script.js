@@ -1,9 +1,9 @@
 let groupList = [];
 
-class Group {
-  constructor(name, pivots) {
-    this.name = name;
-    this.pivots = pivots;
+class MisenGroup {
+  constructor(name, nodes) {
+    this.groupName = name;
+    this.groupNodes = nodes;
   }
 }
 

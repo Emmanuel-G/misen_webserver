@@ -38,6 +38,10 @@ const drawSchema = new Schema({
   drawGame: { type: Schema.Types.ObjectId, ref: "Game" },
 });
 
+drawSchema.post("save", () => {
+  Game.findByIdAndUpdate(this.drawGame, { gameDraw: this._id });
+});
+
 const betSchema = new Schema({
   betNumber: { type: Number, required: true },
   betGame: { type: Schema.Types.ObjectId, ref: "Game" },
